@@ -2,8 +2,6 @@
     "use strict";
 
     jQuery(document).on('ready', function () {
-
-
         function initNav() {
             /***MENU TOGGLE ANIMATION***/
             $('div.toggle-normal').on('click', function () {
@@ -357,8 +355,10 @@
         
 
     });
-
-
 })(jQuery);
+
+$(document).load(function () {
+    console.log('working');
+})
 
 
