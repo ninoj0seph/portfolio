@@ -264,66 +264,17 @@
         }
 
         function initMapsDark() {
-            var styles = [{
-                "featureType": "all",
-                "elementType": "labels.text.fill",
-                "stylers": [{"saturation": 36}, {"color": "#000000"}, {"lightness": 40}]
-            }, {
-                "featureType": "all",
-                "elementType": "labels.text.stroke",
-                "stylers": [{"visibility": "on"}, {"color": "#000000"}, {"lightness": 16}]
-            }, {
-                "featureType": "all",
-                "elementType": "labels.icon",
-                "stylers": [{"visibility": "off"}]
-            }, {
-                "featureType": "administrative",
-                "elementType": "geometry.fill",
-                "stylers": [{"color": "#000000"}, {"lightness": 20}]
-            }, {
-                "featureType": "administrative",
-                "elementType": "geometry.stroke",
-                "stylers": [{"color": "#000000"}, {"lightness": 17}, {"weight": 1.2}]
-            }, {
-                "featureType": "landscape",
-                "elementType": "geometry",
-                "stylers": [{"color": "#000000"}, {"lightness": 20}]
-            }, {
-                "featureType": "poi",
-                "elementType": "geometry",
-                "stylers": [{"color": "#000000"}, {"lightness": 21}]
-            }, {
-                "featureType": "road.highway",
-                "elementType": "geometry.fill",
-                "stylers": [{"color": "#000000"}, {"lightness": 17}]
-            }, {
-                "featureType": "road.highway",
-                "elementType": "geometry.stroke",
-                "stylers": [{"color": "#000000"}, {"lightness": 29}, {"weight": 0.2}]
-            }, {
-                "featureType": "road.arterial",
-                "elementType": "geometry",
-                "stylers": [{"color": "#000000"}, {"lightness": 18}]
-            }, {
-                "featureType": "road.local",
-                "elementType": "geometry",
-                "stylers": [{"color": "#000000"}, {"lightness": 16}]
-            }, {
-                "featureType": "transit",
-                "elementType": "geometry",
-                "stylers": [{"color": "#000000"}, {"lightness": 19}]
-            }, {
-                "featureType": "water",
-                "elementType": "geometry",
-                "stylers": [{"color": "#000000"}, {"lightness": 17}]
-            }];
+            var styles = [{"featureType":"water","elementType":"geometry","stylers":[{"color":"#333739"}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#2ecc71"}]},{"featureType":"poi","stylers":[{"color":"#2ecc71"},{"lightness":-7}]},{"featureType":"road.highway","elementType":"geometry","stylers":[{"color":"#2ecc71"},{"lightness":-28}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#2ecc71"},{"visibility":"on"},{"lightness":-15}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#2ecc71"},{"lightness":-18}]},{"elementType":"labels.text.fill","stylers":[{"color":"#ffffff"}]},{"elementType":"labels.text.stroke","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#2ecc71"},{"lightness":-34}]},{"featureType":"administrative","elementType":"geometry","stylers":[{"visibility":"on"},{"color":"#333739"},{"weight":0.8}]},{"featureType":"poi.park","stylers":[{"color":"#2ecc71"}]},{"featureType":"road","elementType":"geometry.stroke","stylers":[{"color":"#333739"},{"weight":0.3},{"lightness":10}]}];
             var mapOptions = {
-                zoom: 17,
-                center: new google.maps.LatLng(51.5287352, -0.3817831),
+                zoom: 9,
+                center: new google.maps.LatLng(33.812511, -117.918976),
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
+                disableDefaultUI: true,
                 scrollwheel: false,
-                disableDefaultUI: false,
-                styles: styles //black n white
+                styles: styles,
+                draggable: false,
+                zoomControl: false,
+                disableDoubleClickZoom: true
             };
 
             var myMap = new google.maps.Map(document.getElementById('myMap'), mapOptions);
@@ -382,8 +333,8 @@
         initClientsSliders();    // Initializes Clients Sliders
         initVideoPlayAndClose(); // Video Play and Close Functionality
         initMail();              // Mail Initialization
-        initMapsNormal();        // Enable For Normal Map
-        //initMapsDark();          // Enable For Dark Map
+        // initMapsNormal();        // Enable For Normal Map
+        initMapsDark();          // Enable For Dark Map
 
     });
 

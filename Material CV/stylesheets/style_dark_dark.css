@@ -1664,9 +1664,11 @@ POPUP ANIMATIONS
 #interest .card .box .interest-icon {
     /*interest icon*/
     display: block;
-    color: #282828;
-    background: #06A763;
+    background: #282828;
     height: 105px; }
+.interest-icon img{
+    height: auto;
+    width: 100%;}
 #interest .card .box .interest-icon i {
     /*icon*/
     font-size: 2.2em;
@@ -1674,12 +1676,12 @@ POPUP ANIMATIONS
 #interest .card .box .interest-icon span {
     /*icon name*/
     display: block; }
-#interest .card .box .interest-icon-even {
-    /*interest icon even*/
-    display: block;
-    color: #06A763;
-    height: 105px;
-    margin-right: -1px; }
+/*#interest .card .box .interest-icon-even {*/
+    /*!*interest icon even*!*/
+    /*display: block;*/
+    /*color: #06A763;*/
+    /*height: 105px;*/
+    /*margin-right: -1px; }*/
 #interest .card .box .interest-icon-even i {
     /*icon*/
     font-size: 2.2em;
@@ -1995,10 +1997,10 @@ POPUP ANIMATIONS
     height: 417px; }
 #contact #myMap .map-label {
     /*map label*/
-    width: 36px;
-    height: 36px;
+    width: 15px;
+    height: 15px;
     border-radius: 50% 50% 50% 0;
-    background: #06A763;
+    background: red;
     position: absolute;
     -webkit-transform: rotate(-45deg) !important;
     transform: rotate(-45deg) !important;
