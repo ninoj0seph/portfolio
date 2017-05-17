@@ -2,7 +2,7 @@
 
 /* Configuration */
 /*your web-mail*/
-$mailto  = 'yourmail@provider.com';
+$mailto  = 'ninojoseph.tugade@gmail.com';
 
 
 $name     	= strip_tags($_POST['first_name']);
@@ -37,7 +37,7 @@ $message = "<html><body>$body</body></html>";
 if(empty($name) || empty($sub) || empty($email) || empty($comments) ){
 
     echo "Fill The Form Properly"; // message
-    header("Location: http://home-page-link"); //go to home page
+    header("Location: http://localhost:8888/index-normal.html"); //go to home page
     die();
 
 }

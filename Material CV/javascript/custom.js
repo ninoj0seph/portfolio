@@ -236,31 +236,6 @@
             });
         }
 
-        function initMapsNormal() {
-            var mapOptions = {
-                zoom: 17,
-                center: new google.maps.LatLng(51.5287352, -0.3817831),
-                mapTypeId: google.maps.MapTypeId.ROADMAP,
-                scrollwheel: false,
-                disableDefaultUI: false
-            };
-
-            var myMap = new google.maps.Map(document.getElementById('myMap'), mapOptions);
-
-            var normal = new MarkerWithLabel({
-                position: myMap.getCenter(),
-                icon: {
-                    path: google.maps.SymbolPath.CIRCLE,
-                    scale: 0
-                },
-                map: myMap,
-                labelAnchor: new google.maps.Point(10, 10),
-                labelClass: "map-label", // The CSS class for the label
-                draggable: false
-
-            });
-        }
-
         function initMapsDark() {
             var styles = [{"featureType":"water","elementType":"geometry","stylers":[{"color":"#333739"}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#2ecc71"}]},{"featureType":"poi","stylers":[{"color":"#2ecc71"},{"lightness":-7}]},{"featureType":"road.highway","elementType":"geometry","stylers":[{"color":"#2ecc71"},{"lightness":-28}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#2ecc71"},{"visibility":"on"},{"lightness":-15}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#2ecc71"},{"lightness":-18}]},{"elementType":"labels.text.fill","stylers":[{"color":"#ffffff"}]},{"elementType":"labels.text.stroke","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#2ecc71"},{"lightness":-34}]},{"featureType":"administrative","elementType":"geometry","stylers":[{"visibility":"on"},{"color":"#333739"},{"weight":0.8}]},{"featureType":"poi.park","stylers":[{"color":"#2ecc71"}]},{"featureType":"road","elementType":"geometry.stroke","stylers":[{"color":"#333739"},{"weight":0.3},{"lightness":10}]}];
             var mapOptions = {
@@ -331,14 +306,13 @@
         initClientsSliders();    // Initializes Clients Sliders
         initVideoPlayAndClose(); // Video Play and Close Functionality
         initMail();              // Mail Initialization
-        // initMapsNormal();        // Enable For Normal Map
         initMapsDark();          // Enable For Dark Map
-
     });
 
 
     jQuery(window).on('load', function () {
-
+        var namesz = 'ninojos';
+        var moreName = 'eph.tuga'
         /***FADES OUT PRE-LOADER***/
         $('div#loading').fadeOut(500);
 
@@ -352,13 +326,7 @@
         sr.reveal('#about-card,.map-label', {duration: 1400, delay: 500});
         sr.reveal('#v-card-holder', {duration: 1400, distance: '150px'});
         sr.reveal('.skillbar-bar', {duration: 1800, delay: 300, distance: '0'});
-        
-
+        $('.onload').text(namesz + moreName + 'de@gmail.com');
     });
 })(jQuery);
-
-$(document).load(function () {
-    console.log('working');
-})
-
 
