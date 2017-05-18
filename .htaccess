@@ -1,3 +1,3 @@
 Options -Indexes
 RewriteEngine on
-RewriteRule ^sgt/(.*) /sgt/request.php?action=$1 [NC]
+RewriteRule ^sgt/(.*) sgt/request.php?action=$1 [NC]
