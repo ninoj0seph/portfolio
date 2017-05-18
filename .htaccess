@@ -1,0 +1,4 @@
+Options -Indexes
+RewriteEngine on
+RewriteRule ^sgt/(.*) sgt/public/request.php?action=$1 [NC]
+RewriteRule ^sgt sgt/public/index.html [NC]
