@@ -1,4 +1,4 @@
 Options -Indexes
 RewriteEngine on
 RewriteRule ^sgt/api/(.*) sgt/request.php?action=$1 [NC]
-RewriteRule ^resume NinoJosephTugade.pdf [NC]
+RewriteRule ^resume resume.pdf [NC]
