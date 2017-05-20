@@ -1895,7 +1895,7 @@ POPUP ANIMATIONS
 #blog .blog .image img {
     /*blog image*/
     display: block;
-    height: 100%;
+    height: auto;
     width: 100%;
     position: absolute;
     z-index: 1;
