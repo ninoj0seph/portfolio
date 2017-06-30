@@ -47,10 +47,12 @@
         function initScrollToTop() {
             /***SCROLL TO TOP***/
             $(window).on('scroll', function () {
-                if ($(this).scrollTop() >= 50) {        // If page is scrolled more than 50px
+                if ($(this).scrollTop() >= 350) {        // If page is scrolled more than 50px
                     $('div#scrollup').addClass('animated flipInY').fadeIn(200);    // Fade in the arrow
+                    $('#menuToggle').fadeIn(200);
                 } else {
                     $('div#scrollup').fadeOut(200);
+                    $('#menuToggle').fadeOut(200);
                 }
             });
 
@@ -58,7 +60,6 @@
                 $("html,body").animate({
                     scrollTop: 0
                 }, 600);
-
                 return false;
             });
         }
@@ -327,6 +328,7 @@
         sr.reveal('#v-card-holder', {duration: 1400, distance: '150px'});
         sr.reveal('.skillbar-bar', {duration: 1800, delay: 300, distance: '0'});
         $('.onload').text(namesz + moreName + 'de@gmail.com');
+        $('#menuToggle').hide();
     });
 })(jQuery);
 
