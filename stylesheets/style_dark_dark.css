@@ -2251,3 +2251,7 @@ hr {
     margin: 0; }
 
 /*# sourceMappingURL=style.css.map */
+
+.breadcrumb li {
+    color : #06A763;
+}
