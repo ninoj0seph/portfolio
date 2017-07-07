@@ -20,7 +20,7 @@ VERSION :	2.0
  	3. HEADER / #home
 	     3.1 NAVIGATION / #themenu
 		    3.1.1 MENU / #menu-options
-		      3.1.1.1 PERSONAL LOGO / .logo-flat
+		      3.1.1.1 PERSONAL LOGO / .images-flat
 		      3.1.1.2 OPTIONS / a
 		    3.1.2 MENU BUTTON / #menuToggle
 
@@ -609,12 +609,12 @@ body.scale-effect {
     overflow-y: auto;
     padding-top: 14px; }
   #home .menu .logo-flat {
-    /*menu logo*/
+    /*menu images*/
     height: 200px;
     margin-top: -14px;
     background: #06A763; }
     #home .menu .logo-flat img {
-      /*logo image*/
+      /*images image*/
       width: 100%;
       padding: 30px 44px 44px 44px; }
 #home .menu-open {
@@ -1741,7 +1741,7 @@ POPUP ANIMATIONS
     margin: 15px 0 0 0;
     font-style: normal; }
 #testimonials #clients {
-  /*clients logo slider*/
+  /*clients images slider*/
   margin-top: 20px;
   display: block; }
   #testimonials #clients .clients-wrap {
@@ -1755,7 +1755,7 @@ POPUP ANIMATIONS
       list-style: none;
       position: relative; }
       #testimonials #clients .clients-wrap ul li {
-        /*logo list*/
+        /*images list*/
         display: block;
         float: left;
         position: relative;
@@ -1774,7 +1774,7 @@ POPUP ANIMATIONS
           filter: alpha(opacity=65);
           opacity: 0.65; }
         #testimonials #clients .clients-wrap ul li img:hover {
-          /*logo hover effect*/
+          /*images hover effect*/
           -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
           filter: alpha(opacity=100);
           opacity: 1.0; }
