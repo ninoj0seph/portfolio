@@ -1,10 +1,10 @@
 <?php
-$name = $_POST['name'];
-$email = $_POST['email'];
-$subject = $_POST['subject'];
+$name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
+$email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
+$subject = filter_var($_POST['subject'], FILTER_SANITIZE_STRING);
 $from = 'From: Your Portfolio';
 $to = 'ninojoseph.tugade@gmail.com';
-$message = $_POST['message'];
+$message = filter_var($_POST['message'], FILTER_SANITIZE_STRING);
 
 $body = "From: $name\n E-Mail: $email\n Message:\n $message";
 
