@@ -1,4 +1,7 @@
 Options -Indexes
 RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ / [L]
 RewriteRule ^sgt/api/(.*) sgt/request.php?action=$1 [NC]
 RewriteRule ^resume resume.pdf [NC]
