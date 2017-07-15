@@ -10,7 +10,6 @@
                 $('i.bottom-bar').toggleClass('bottom-transform');
             });
 
-
             /***MENU CLOSE***/
             $('.section,div#menu-options a').on('click', function () {
                 $('nav#theMenu').removeClass('menu-open');
@@ -267,32 +266,50 @@
             });
         }
 
+
+
         function initMail() {
             /***MAIL SCRIPT***/
             $('form#contact-form').on('submit', function (e) {
                 e.preventDefault(); //Prevents default submit
                 var form = $(this);
                 $("#submit").attr('disabled', 'disabled'); //Disable the submit button on click
-                var post_data = form.serialize(); //Serialized the form data
-                $('div#form-loader').removeClass('is-hidden').fadeIn(500);
-                $.ajax({
-                    type: 'POST',
-                    url: 'php/mail_handler.php', // Form script
-                    data: post_data
-                })
-                    .done(function () {
-                        $('div#form-loader').fadeOut(500);
-                        Materialize.toast('Message Sent! I will contact you shortly, Thanks', 4000);
-                        $("form#contact-form")[0].reset();
-                        Materialize.updateTextFields(); // Rest floating labels
-                        $("#submit").removeAttr('disabled', 'disabled'); // Enable submit button
 
+                var values = [$('#first_name').val(),$('#sub').val(),$('#email').val()],
+                    regexTextBoxes = /^[a-zA-Z-,0-9]+(\s{0,1}[a-zA-Z-, 0-9@.])*$/,
+                    emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+                for(var i = 0; i < values.length - 1; i++){
+                    if(!(values[i] = regexTextBoxes.test(values[i]))){
+                        Materialize.toast(i === 0 ? 'Please Enter a valid name!' : 'Please Enter a valid subject!', 4000);
+                    }
+                }
+                if(!(values[2] = emailRegex.test(values[2]))){
+                    Materialize.toast('Please Enter a valid email!', 4000)
+                }
+
+                if(values[0] && values[1] && values[2]){
+                    var post_data = form.serialize(); //Serialized the form data
+                    $('div#form-loader').removeClass('is-hidden').fadeIn(500);
+                    $.ajax({
+                        type: 'POST',
+                        url: 'https://ninojoseph.com/php/mail_handler.php', // Form script
+                        data: post_data
                     })
-                    .fail(function () {
-                        $('div#form-loader').fadeOut(500);
-                        Materialize.toast('Sorry! Something Wrong, Try Again', 4000);
-                        $("#submit").removeAttr('disabled', 'disabled'); // Enable submit button
-                    });
+                        .done(function () {
+                            $('div#form-loader').fadeOut(500);
+                            Materialize.toast('Message Sent! I will contact you shortly, Thanks', 4000);
+                            $("form#contact-form")[0].reset();
+                            Materialize.updateTextFields(); // Rest floating labels
+                            $("#submit").removeAttr('disabled', 'disabled'); // Enable submit button
+
+                        })
+                        .fail(function () {
+                            $('div#form-loader').fadeOut(500);
+                            Materialize.toast('Sorry! Something Wrong, Try Again', 4000);
+                        });
+                }
+                $("#submit").removeAttr('disabled', 'disabled'); // Enable submit button
             });
         }
 
@@ -313,7 +330,7 @@
 
     jQuery(window).on('load', function () {
         var namesz = 'ninojos';
-        var moreName = 'eph.tuga'
+        var moreName = 'eph.tuga';
         /***FADES OUT PRE-LOADER***/
         $('div#loading').fadeOut(500);
 
@@ -332,3 +349,6 @@
     });
 })(jQuery);
 
+function validateInputs() {
+
+}
